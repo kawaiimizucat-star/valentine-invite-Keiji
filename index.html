@@ -131,7 +131,7 @@ button {
 
 <div class="card">
   <h1>Dear Khelyana 💖</h1>
-  <div class="subtitle">(also known as Yannie, Lovelove ko)</div>
+  <div class="subtitle">(also known as Yannie, professional heart thief)</div>
   <div id="typewriter"></div>
   <div id="countdown"></div>
   <div id="buttonContainer">
@@ -139,22 +139,84 @@ button {
     <button id="noBtn" onclick="sayNo()">No</button>
   </div>
   <div id="afterYes" class="hidden">
-    <div class="final-message">
-      I love you so much! Let's go sa photobooth, Pinto Art, and Rob mall ulit :))
-    </div>
-    <img class="cat-image" id="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cuddling cats" />
-    <div><strong>This is us after our date mueheheheh</strong></div>
-    <div id="easterEgg" class="hidden final-message">Okay fine maybe we stay 10 minutes longer sa photobooth 😌</div>
+    <!-- ... rest of your content ... -->
   </div>
-  <div id="question">Pls mag yes ka na</div>
-  <button id="yesBtn2">Sige na nga</button>
-  <button id="noBtn2">AYAW KO</button>
+  <!-- Removed the question line here -->
+  <!-- <div id="question">¿Quieres seguir jugando?</div> -->
+ 
   <div id="gifContainer"></div>
   <img id="finalMeme" src="" alt="Final Meme" />
 </div>
 
 <script>
 // Typewriter effect
+// Keep your existing functions
+
+// Function to shrink a button smoothly
+function shrinkButton(buttonId) {
+  const btn = document.getElementById(buttonId);
+  let scale = 1;
+
+  const interval = setInterval(() => {
+    scale -= 0.05;
+    if (scale <= 0) {
+      clearInterval(interval);
+      btn.style.display = 'none'; // hide when fully shrunk
+    } else {
+      btn.style.transform = `scale(${scale})`;
+    }
+  }, 50);
+}
+
+// Update your "No" button handler
+function sayNo() {
+  noClicks++;
+  moveButton();
+
+  const gifContainer = document.getElementById("gifContainer");
+  const finalMeme = document.getElementById("finalMeme");
+  const gif = document.createElement("img");
+  gif.style.width = "80px";
+  gif.style.margin = "5px";
+
+  let gifIndex = noClicks - 1;
+  if (gifIndex >= 7) gifIndex = 7; // last meme on 8th click
+
+  gif.src = gifUrls[gifIndex];
+  gifContainer.appendChild(gif);
+
+  // Remove GIF after 1 second
+  setTimeout(() => {
+    if (gif.parentNode) gif.remove();
+  }, 1000);
+
+  if (noClicks >= 7) {
+    document.getElementById("noBtn").style.display = "none";
+    finalMeme.src = gifUrls[7];
+    finalMeme.style.display = "block";
+  }
+
+  // Shrink the "No" button
+  shrinkButton("noBtn");
+
+  // Grow the "Yes" button
+  yesButtonScale += 0.2; // increase scale
+  if (yesButtonScale > 3) yesButtonScale = 3; // optional max size
+  document.getElementById("yesBtn").style.transform = `scale(${yesButtonScale})`;
+}
+
+// Update your "Yes" button handler
+function sayYes() {
+  // Shrink the "Yes" button smoothly
+  shrinkButton("yesBtn");
+  
+  // Show the next content
+  document.getElementById("afterYes").classList.remove("hidden");
+  document.getElementById("buttonContainer").remove();
+
+  // Keep your existing confetti or other actions
+  createConfetti();
+}
 const message = "Will You be my valentine?";
 let index = 0;
 function typeEffect() {
@@ -165,6 +227,7 @@ function typeEffect() {
   }
 }
 typeEffect();
+
 
 // Countdown
 const valentinesDate = new Date(2026, 1, 14, 18, 0, 0);
@@ -186,14 +249,14 @@ setInterval(updateCountdown, 1000);
 
 // Gif URLs
 const gifUrls = [
-  "https://tenor.com/view/happy-cat-gif-13725053412610276088",
-  "https://tenor.com/view/weird-cute-cat-meme-dancing-cat-meme-rawr-gif-12169608540182919744",
-  "https://tenor.com/view/p1-gif-4520859952946932427",
-  "https://tenor.com/view/cat-hitting-beat-up-gif-8279846698060381944",
-  "https://tenor.com/view/cat-gif-14345055558441530836",
-  "https://tenor.com/view/cat-gif-7053890032218805381",
-  "https://tenor.com/view/cat-gif-2605163403954038415",
-  "https://tenor.com/view/cat-cat-rocked-cat-aura-cat-ego-cat-attitude-gif-2728367062656046314"
+  "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXY2OG5wNGpqcWhzaTM0bHB1ZXFpc3U3bHV4aGZyYm93YjA4eW16OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KztT2c4u8mYYUiMKdJ/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXY2OG5wNGpqcWhzaTM0bHB1ZXFpc3U3bHV4aGZyYm93YjA4eW16OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pY8jLmZw0ElqvVeRH4/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXY2OG5wNGpqcWhzaTM0bHB1ZXFpc3U3bHV4aGZyYm93YjA4eW16OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/sP0SLcBdcPYqKKnfaY/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cWlva3R0cnRzMWNvMDBzNzQwZm92Z29xOHNnZjJub2EwNm4wNDY4YSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YhYgIyRd7dETRsOtK6/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y25ybmR1Ym9saTBtNjk2ajkyb2hhdjV1dG0xYWE3czYzeTNhZXg4cSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qtgkm1xVilBFWD63CT/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Nmd0ZzNjczAyOHdpOXB5ejJqc3BxaHIxdTg1dHBvaXo3eGt1ZzdxdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/se8tmt1xasC9ByWNau/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y25ybmR1Ym9saTBtNjk2ajkyb2hhdjV1dG0xYWE3czYzeTNhZXg4cSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mi4ec226vjAkehSLk0/giphy.gif",
+  "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dWFqYW8zNnhsZWY5NjJ4N3o2aGJxcXpid3g4ZmhhbjFlZTdyeDl5ayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ntabtjuLcHMlsCpklz/giphy.gif"
 ];
 
 let noClicks = 0;
