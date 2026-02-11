@@ -150,73 +150,7 @@ button {
 
 <script>
 // Typewriter effect
-// Keep your existing functions
 
-// Function to shrink a button smoothly
-function shrinkButton(buttonId) {
-  const btn = document.getElementById(buttonId);
-  let scale = 1;
-
-  const interval = setInterval(() => {
-    scale -= 0.05;
-    if (scale <= 0) {
-      clearInterval(interval);
-      btn.style.display = 'none'; // hide when fully shrunk
-    } else {
-      btn.style.transform = `scale(${scale})`;
-    }
-  }, 50);
-}
-
-// Update your "No" button handler
-function sayNo() {
-  noClicks++;
-  moveButton();
-
-  const gifContainer = document.getElementById("gifContainer");
-  const finalMeme = document.getElementById("finalMeme");
-  const gif = document.createElement("img");
-  gif.style.width = "80px";
-  gif.style.margin = "5px";
-
-  let gifIndex = noClicks - 1;
-  if (gifIndex >= 7) gifIndex = 7; // last meme on 8th click
-
-  gif.src = gifUrls[gifIndex];
-  gifContainer.appendChild(gif);
-
-  // Remove GIF after 1 second
-  setTimeout(() => {
-    if (gif.parentNode) gif.remove();
-  }, 1000);
-
-  if (noClicks >= 7) {
-    document.getElementById("noBtn").style.display = "none";
-    finalMeme.src = gifUrls[7];
-    finalMeme.style.display = "block";
-  }
-
-  // Shrink the "No" button
-  shrinkButton("noBtn");
-
-  // Grow the "Yes" button
-  yesButtonScale += 0.2; // increase scale
-  if (yesButtonScale > 3) yesButtonScale = 3; // optional max size
-  document.getElementById("yesBtn").style.transform = `scale(${yesButtonScale})`;
-}
-
-// Update your "Yes" button handler
-function sayYes() {
-  // Shrink the "Yes" button smoothly
-  shrinkButton("yesBtn");
-  
-  // Show the next content
-  document.getElementById("afterYes").classList.remove("hidden");
-  document.getElementById("buttonContainer").remove();
-
-  // Keep your existing confetti or other actions
-  createConfetti();
-}
 const message = "Will You be my valentine?";
 let index = 0;
 function typeEffect() {
