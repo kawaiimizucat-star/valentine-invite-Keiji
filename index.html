@@ -1,231 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Dear 💖</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Interactive Meme</title>
+<title>For Dear 💖</title>
 <style>
 body {
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffc3a0, #ffafbd);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffc3a0, #ffafbd);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-  }
 
 .card {
-    background: white;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-    text-align: center;
-    max-width: 460px;
-  .card {
-position: relative;
-    z-index: 2;
-    animation: floatCard 4s ease-in-out infinite;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  text-align: center;
+  max-width: 460px;
+  position: relative;
+  z-index: 2;
+  animation: floatCard 4s ease-in-out infinite;
 }
 
 @keyframes floatCard {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 h1 {
-    color: #ff4b6e;
-    margin-bottom: 5px;
+  color: #ff4b6e;
+  margin-bottom: 5px;
 }
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
 .subtitle {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 15px;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 15px;
 }
-  #question {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
+#question {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 #typewriter {
-  #yesBtn, #noBtn {
-    padding: 20px;
-font-size: 20px;
-    font-weight: bold;
-    color: #ff4b6e;
-    min-height: 28px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  min-height: 24px;
 }
-
-#countdown {
-    margin-top: 12px;
-    font-weight: bold;
-    color: #ff4b6e;
-}
-
 button {
-    padding: 12px 22px;
-    margin: 10px;
-border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    border-radius: 8px;
-cursor: pointer;
-    transition: 0.3s ease;
+  padding: 12px 22px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
-    margin: 10px;
-  }
-
-.yes {
-    background-color: #ff4b6e;
-  #yesBtn {
-    background-color: #4CAF50;
-color: white;
+#yesBtn {
+  background-color: #ff4b6e;
+  color: white;
 }
-  }
-
-.yes:hover {
-    transform: scale(1.1);
+#yesBtn:hover {
+  transform: scale(1.1);
+  background-color: #e63946;
 }
-
-.no {
-    background-color: #ddd;
+#noBtn {
+  background-color: #ddd;
 }
-
-.hidden {
-    display: none;
+#noBtn:hover {
+  background-color: #f44336;
+  color: white;
 }
-  #yesBtn:hover {
-    background-color: #45a049;
-  }
-
-.cat-container {
-  #noBtn {
-    background-color: #f44336;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
-  }
-
-  #noBtn:hover {
-    background-color: #da190b;
-  }
-
-  #gifContainer {
-margin-top: 20px;
-    animation: fadeIn 1s ease forwards;
+#gifContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeIn 1s ease forwards;
 }
-
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
-
-.cat-image {
-    width: 260px;
-    border-radius: 15px;
-    margin-top: 10px;
-    cursor: pointer;
+#finalMeme {
+  margin-top: 20px;
+  display: none;
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
 }
-
-.final-message {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #ff4b6e;
-}
-
 .heart {
-    position: fixed;
-    bottom: -10px;
-    font-size: 20px;
-    animation: floatUp 6s linear infinite;
-    opacity: 0.7;
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.7;
 }
-
 @keyframes floatUp {
-    0% { transform: translateY(0); opacity: 0.7; }
-    100% { transform: translateY(-110vh); opacity: 0; }
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-110vh); opacity: 0; }
 }
-
 .confetti {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    top: -10px;
-    animation: fall 3s linear forwards;
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  top: -10px;
+  animation: fall 3s linear forwards;
 }
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
 @keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-  #finalMeme {
-    margin-top: 20px;
-    display: none;
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
   }
+}
 </style>
 </head>
 <body>
 
 <div class="card">
-    <h1>Dear Khelyana 💖</h1>
-    <div class="subtitle">(also known as Yannie, professional heart thief)</div>
-
-    <div id="typewriter"></div>
-
-    <div id="countdown"></div>
-
-    <div id="buttonContainer">
-        <button id="yesBtn" class="yes" onclick="sayYes()">Yes</button>
-        <button id="noBtn" class="no" onclick="sayNo()">No</button>
+  <h1>Dear Khelyana 💖</h1>
+  <div class="subtitle">(also known as Yannie, Lovelove ko)</div>
+  <div id="typewriter"></div>
+  <div id="countdown"></div>
+  <div id="buttonContainer">
+    <button id="yesBtn" onclick="sayYes()">Yes</button>
+    <button id="noBtn" onclick="sayNo()">No</button>
+  </div>
+  <div id="afterYes" class="hidden">
+    <div class="final-message">
+      I love you so much! Let's go sa photobooth, Pinto Art, and Rob mall ulit :))
     </div>
-
-    <div id="afterYes" class="hidden cat-container">
-        <div class="final-message">
-            I love you so much! Let's go sa photobooth, Pinto Art, and Rob mall ulitt :))
-        </div>
-        <img class="cat-image" id="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cuddling cats">
-        <div><strong>This is us after our date mueheheheh</strong></div>
-        <div id="easterEgg" class="hidden final-message">Okay fine maybe we stay 10 minutes longer sa photobooth 😌</div>
-    </div>
-  <div id="question">¿Quieres seguir jugando?</div>
-  <button id="yesBtn">Sí</button>
-  <button id="noBtn">No</button>
+    <img class="cat-image" id="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cuddling cats" />
+    <div><strong>This is us after our date mueheheheh</strong></div>
+    <div id="easterEgg" class="hidden final-message">Okay fine maybe we stay 10 minutes longer sa photobooth 😌</div>
+  </div>
+  <div id="question">Pls mag yes ka na</div>
+  <button id="yesBtn2">Sige na nga</button>
+  <button id="noBtn2">AYAW KO</button>
   <div id="gifContainer"></div>
   <img id="finalMeme" src="" alt="Final Meme" />
 </div>
@@ -235,144 +158,128 @@ margin-top: 20px;
 const message = "Will You be my valentine?";
 let index = 0;
 function typeEffect() {
-    if (index < message.length) {
-        document.getElementById("typewriter").innerHTML += message.charAt(index);
-        index++;
-        setTimeout(typeEffect, 70);
-  const noBtn = document.getElementById('noBtn');
-  const gifContainer = document.getElementById('gifContainer');
-  const finalMeme = document.getElementById('finalMeme');
-
-  const gifUrls = [
-    "https://tenor.com/view/happy-cat-gif-13725053412610276088",
-    "https://tenor.com/view/weird-cute-cat-meme-dancing-cat-meme-rawr-gif-12169608540182919744",
-    "https://tenor.com/view/p1-gif-4520859952946932427",
-    "https://tenor.com/view/cat-hitting-beat-up-gif-8279846698060381944",
-    "https://tenor.com/view/cat-gif-14345055558441530836",
-    "https://tenor.com/view/cat-gif-7053890032218805381",
-    "https://tenor.com/view/cat-gif-2605163403954038415",
-    "https://tenor.com/view/cat-cat-rocked-cat-aura-cat-ego-cat-attitude-gif-2728367062656046314" // last meme
-  ];
-
-  let noClicks = 0;
-
-  function moveButton() {
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-    noBtn.style.top = `${y}px`;
-    noBtn.style.left = `${x}px`;
+  if (index < message.length) {
+    document.getElementById("typewriter").innerHTML += message.charAt(index);
+    index++;
+    setTimeout(typeEffect, 70);
   }
-
-  noBtn.addEventListener('click', () => {
-    noClicks++;
-
-    // Move the "No" button around
-    moveButton();
-
-    // Add a GIF
-    const gif = document.createElement('img');
-    gif.style.width = '80px';
-    gif.style.margin = '5px';
-
-    // Change GIF based on click count (cycle through first 7, then last)
-    let gifIndex = noClicks - 1;
-    if (gifIndex >= 7) gifIndex = 7; // last meme for the 8th click
-
-    gif.src = gifUrls[gifIndex];
-    gifContainer.appendChild(gif);
-
-    // Remove GIFs after 1 second to keep the container clean
-    setTimeout(() => {
-      if (gif.parentNode) {
-        gif.remove();
-      }
-    }, 1000);
-
-    // Limit to 7 clicks
-    if (noClicks >= 7) {
-      // Hide the "No" button
-      noBtn.style.display = 'none';
-
-      // Show the final meme
-      finalMeme.src = gifUrls[7];
-      finalMeme.style.display = 'block';
-}
 }
 typeEffect();
 
 // Countdown
 const valentinesDate = new Date(2026, 1, 14, 18, 0, 0);
 function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = valentinesDate - now;
-    if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "It is finally our date day.";
-        return;
-    }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((distance / (1000 * 60)) % 60);
-    const seconds = Math.floor((distance / 1000) % 60);
-    document.getElementById("countdown").innerHTML =
-        `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  const now = new Date().getTime();
+  const distance = valentinesDate - now;
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML = "It is finally our date day.";
+    return;
+  }
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+  document.getElementById("countdown").innerHTML =
+    `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 setInterval(updateCountdown, 1000);
 
-// Button behavior
-let yesScale = 1;
-let noScale = 1;
-let noPressCount = 0;
+// Gif URLs
+const gifUrls = [
+  "https://tenor.com/view/happy-cat-gif-13725053412610276088",
+  "https://tenor.com/view/weird-cute-cat-meme-dancing-cat-meme-rawr-gif-12169608540182919744",
+  "https://tenor.com/view/p1-gif-4520859952946932427",
+  "https://tenor.com/view/cat-hitting-beat-up-gif-8279846698060381944",
+  "https://tenor.com/view/cat-gif-14345055558441530836",
+  "https://tenor.com/view/cat-gif-7053890032218805381",
+  "https://tenor.com/view/cat-gif-2605163403954038415",
+  "https://tenor.com/view/cat-cat-rocked-cat-aura-cat-ego-cat-attitude-gif-2728367062656046314"
+];
 
+let noClicks = 0;
+
+// Move "No" button randomly
+function moveButton() {
+  const noBtn = document.getElementById("noBtn");
+  const maxX = window.innerWidth - noBtn.offsetWidth;
+  const maxY = window.innerHeight - noBtn.offsetHeight;
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+  noBtn.style.position = "absolute";
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
+}
+
+// Handle "No" button click
 function sayNo() {
-    noPressCount++;
-    noScale -= 0.1;
-    yesScale += 0.1;
-    if (noScale < 0.4) noScale = 0.4;
-    document.getElementById("noBtn").style.transform = `scale(${noScale})`;
-    document.getElementById("yesBtn").style.transform = `scale(${yesScale})`;
-    if (noPressCount >= 30) {
-        document.getElementById("noBtn").remove();
-    }
+  noClicks++;
+  moveButton();
+
+  const gifContainer = document.getElementById("gifContainer");
+  const finalMeme = document.getElementById("finalMeme");
+  const gif = document.createElement("img");
+  gif.style.width = "80px";
+  gif.style.margin = "5px";
+
+  let gifIndex = noClicks - 1;
+  if (gifIndex >= 7) gifIndex = 7; // last meme on 8th click
+
+  gif.src = gifUrls[gifIndex];
+  gifContainer.appendChild(gif);
+
+  // Remove GIF after 1 second
+  setTimeout(() => {
+    if (gif.parentNode) gif.remove();
+  }, 1000);
+
+  if (noClicks >= 7) {
+    document.getElementById("noBtn").style.display = "none";
+    finalMeme.src = gifUrls[7];
+    finalMeme.style.display = "block";
+  }
 }
 
-function createConfetti() {
-    for (let i = 0; i < 40; i++) {
-        const confetti = document.createElement("div");
-        confetti.classList.add("confetti");
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
-        confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
-        document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 3000);
-    }
-}
-
+// "Yes" button handler
 function sayYes() {
-    document.getElementById("afterYes").classList.remove("hidden");
-    document.getElementById("buttonContainer").remove();
-    createConfetti();
+  document.getElementById("afterYes").classList.remove("hidden");
+  document.getElementById("buttonContainer").remove();
+  createConfetti();
 }
 
-// Easter egg when clicking the cat
+// Create confetti effect
+function createConfetti() {
+  for (let i = 0; i < 40; i++) {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.background = `hsl(${Math.random() * 360}, 80%, 60%)`;
+    confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 3000);
+  }
+}
 
-document.addEventListener("click", function(e) {
-    if (e.target && e.target.id === "cat") {
-        document.getElementById("easterEgg").classList.remove("hidden");
-    }
+// Event listeners for buttons
+document.getElementById("noBtn").addEventListener("click", sayNo);
+document.getElementById("yesBtn").addEventListener("click", sayYes);
+
+// Easter egg on cat click
+document.getElementById("cat").addEventListener("click", () => {
+  document.getElementById("easterEgg").classList.remove("hidden");
 });
 
 // Floating hearts
 function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-    document.body.appendChild(heart);
-    setTimeout(() => { heart.remove(); }, 6000);
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => { heart.remove(); }, 6000);
 }
 setInterval(createHeart, 600);
-  });
 </script>
 
 </body>
+</html>
