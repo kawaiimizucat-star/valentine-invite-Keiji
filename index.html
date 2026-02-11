@@ -133,8 +133,11 @@ setInterval(updateCountdown, 1000);
 
 let yesScale = 1;
 let noScale = 1;
+let noPressCount = 0;
 
 function sayNo() {
+    noPressCount++;
+
     noScale -= 0.1;
     yesScale += 0.1;
 
@@ -142,10 +145,37 @@ function sayNo() {
 
     document.getElementById("noBtn").style.transform = `scale(${noScale})`;
     document.getElementById("yesBtn").style.transform = `scale(${yesScale})`;
+
+    // Remove No button after 30 presses
+    if (noPressCount >= 30) {
+        const noButton = document.getElementById("noBtn");
+        noButton.style.transition = "0.3s";
+        noButton.style.opacity = "0";
+        setTimeout(() => {
+            noButton.remove();
+        }, 300);
+    }
 }
 
 function sayYes() {
     document.getElementById("afterYes").classList.remove("hidden");
+
+    // Hide Yes and No buttons after she presses Yes
+    const yesButton = document.getElementById("yesBtn");
+    const noButton = document.getElementById("noBtn");
+
+    yesButton.style.transition = "0.3s";
+    yesButton.style.opacity = "0";
+    yesButton.style.transform = "scale(0.5)";
+
+    if (noButton) {
+        noButton.style.opacity = "0";
+    }
+
+    setTimeout(() => {
+        yesButton.remove();
+        if (noButton) noButton.remove();
+    }, 300);
 }
 
 // Floating hearts
