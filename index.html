@@ -118,19 +118,22 @@
 
     // Add a GIF
     const gif = document.createElement('img');
-    gif.style.width = '150px';
-    gif.style.margin = '10px';
+    gif.style.width = '80px';
+    gif.style.margin = '5px';
 
-    // Select the appropriate GIF
+    // Change GIF based on click count (cycle through first 7, then last)
     let gifIndex = noClicks - 1;
     if (gifIndex >= 7) gifIndex = 7; // last meme for the 8th click
 
     gif.src = gifUrls[gifIndex];
     gifContainer.appendChild(gif);
 
-    // No removal after 1 second, so the GIF stays visible
-    // Optional: you can remove this line if you want the GIFs to stay permanently
-    // setTimeout(() => { gif.remove(); }, 3000);
+    // Remove GIFs after 1 second to keep the container clean
+    setTimeout(() => {
+      if (gif.parentNode) {
+        gif.remove();
+      }
+    }, 1000);
 
     // Limit to 7 clicks
     if (noClicks >= 7) {
